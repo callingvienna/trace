@@ -1,0 +1,121 @@
+@charset "UTF-8";
+body {
+  font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element-/Tag-Selektoren ~~ */
+ul, ol, dl { /* Aufgrund von Abweichungen zwischen verschiedenen Browsern empfiehlt es sich, die Auffüllung und den Rand in Listen auf 0 einzustellen. Zu Konsistenzzwecken können Sie die gewünschten Werte entweder hier oder in den enthaltenen Listenelementen (LI, DT, DD) eingeben. Beachten Sie, dass die hier eingegebenen Werte hierarchisch auf die .nav-Liste angewendet werden, sofern Sie keinen spezifischeren Selektor festlegen. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* Durch Verschieben des oberen Rands wird das Problem behoben, dass Ränder aus dem zugehörigen div-Tag geraten können. Der übrig gebliebene untere Rand hält ihn getrennt von allen folgenden Elementen. */
+	padding-right: 15px;
+	padding-left: 15px; /* Durch Hinzufügen der Auffüllung zu den Seiten der Elemente innerhalb der div-Tags anstelle der div-Tags selbst entfallen jegliche Box-Modell-Berechnungen. Alternativ kann auch ein verschachteltes div-Tag mit seitlicher Auffüllung verwendet werden. */
+}
+a img { /* Dieser Selektor entfernt den standardmäßigen blauen Rahmen, der in einigen Browsern um ein Bild angezeigt wird, wenn es von einem Hyperlink umschlossen ist. */
+	border: none;
+}
+/* ~~ Die Reihenfolge der Stildefinitionen für die Hyperlinks der Site, einschließlich der Gruppe der Selektoren zum Erzeugen des Hover-Effekts, muss erhalten bleiben. ~~ */
+a:link {
+	/*color: #42413C;*/
+	text-decoration: none; /* Sofern Ihre Hyperlinks nicht besonders hervorgehoben werden sollen, empfiehlt es sich, zur schnellen visuellen Erkennung Unterstreichungen zu verwenden. */
+}
+a:visited {
+	/*color: #6E6C64;*/
+	text-decoration: none;
+}
+a:hover, a:active, a:focus { /* Durch diese Gruppe von Selektoren wird bei Verwendung der Tastatur der gleiche Hover-Effekt wie beim Verwenden der Maus erzielt. */
+	text-decoration: none;
+}
+
+/* ~~ Dieser Container mit fester Breite umschließt die anderen div-Tags. ~~ */
+.container {
+	width: 960px;
+	background-color: #C6C6C6;
+	margin: 0 auto; /* Der mit der Breite gekoppelte automatische Wert an den Seiten zentriert das Layout. */
+}
+
+/* ~~ Für die Kopfzeile wird keine Breite angegeben. Sie erstreckt sich über die gesamte Breite des Layouts. Sie enthält einen Bild-Platzhalter, der durch Ihr eigenes, mit Hyperlink versehenes Logo ersetzt werden sollte. ~~ */
+.header {
+	color:#C6C6C6;
+	height: 90px;
+	background-color: #5B5B59;
+}
+
+.header_1 {
+	float:left;
+	padding-left:10px; 
+	padding-top:35px; 
+	width:170px;; 
+	height:55px; 
+	color:#C6C6C6; 
+	background:#636463;
+}
+
+.header_2 {
+	float:left;
+	background:#C6C6C6; 
+	height:90px; 
+	width:1px;
+}
+
+.header_3 {
+	float:left;
+	width:769px; 
+	height:70px; 
+	text-align:center;
+	padding-top:20px;
+	padding-left:10px;"	
+}
+
+/* ~~ Dies sind die Layoutinformationen. ~~ 
+
+1) Eine Auffüllung wird nur oben und/oder unten im div-Tag positioniert. Die Elemente innerhalb dieses div-Tags verfügen über eine seitliche Auffüllung. Dadurch müssen Sie keine Box-Modell-Berechnungen durchführen. Zu beachten: Wenn Sie dem div-Tag eine seitliche Auffüllung oder einen Rahmen hinzufügen, werden diese zu der festgelegten Breite addiert und ergeben die *gesamte* Breite. Sie können auch die Auffüllung für das Element im div-Tag entfernen und ein zweites div-Tag ohne Breite und mit der gewünschten Auffüllung im ersten div-Tag einfügen.
+
+*/
+.input {
+	padding: 10px 0 0 10px;;
+	height:120px;
+	//background-color:#00F;
+	font-size:12px;
+	border-bottom:medium solid #484846;
+}
+
+
+.content {
+	overflow:scroll;
+	padding: 10px 0 0 10px;;
+	height:575px;
+	font-size:12px;
+}
+
+/* ~~ Fußzeile ~~ */
+.footer {
+	padding-top:20px;
+	//padding-left: 10px;
+	background-color: #5B5B59;
+	color:#C6C6C6;
+	height:50px;
+	text-align:right
+}
+
+/* ~~ Verschiedene float/clear-Klassen ~~ */
+.fltrt {  /* Mit dieser Klasse können Sie ein Element auf der Seite nach rechts fließen lassen. Das fließende Element muss vor dem Element stehen, neben dem es auf der Seite erscheinen soll. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* Mit dieser Klasse können Sie ein Element auf der Seite nach links fließen lassen. Das fließende Element muss vor dem Element stehen, neben dem es auf der Seite erscheinen soll. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* Diese Klasse kann in einem <br />-Tag oder leeren div-Tag als letztes Element nach dem letzten fließenden div-Tag (im #container) platziert werden, wenn #footer entfernt oder aus dem #container herausgenommen wird. */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
